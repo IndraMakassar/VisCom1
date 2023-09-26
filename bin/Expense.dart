@@ -6,4 +6,8 @@ class Expense{
 
   Expense(this.amount, this.category, this.note, this.date);
 
+  @override
+  String toString() {
+    return ("\$ $amount, $category, $note, $date")
+  }
 }
