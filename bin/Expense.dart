@@ -20,7 +20,7 @@ class Expense{
     amount = double.parse(stdin.readLineSync()!);
     print("Please enter the category:");
     category = stdin.readLineSync()!;
-    print("Please enter a note (opsional):");
+    print("Please enter a note (optional):");
     note = stdin.readLineSync();
   }
 }
