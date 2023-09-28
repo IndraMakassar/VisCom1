@@ -9,7 +9,7 @@ void main(List<String> arguments) {
     print("===== expenses tracking =====");
     print("1. Add expense");
     print("2. Show expense history");
-    print("3. Show total expenses");
+    print("3. Show total expenses in a month");
     print("4. exit");
     print("\nchoose a number:");
 
@@ -21,11 +21,16 @@ void main(List<String> arguments) {
         break;
       case "2":
         showExpenseHistory(expenses);
+        print('press enter to continue');
+        stdin.readLineSync();
         break;
       case "3":
         print("input the month: (YYYY-MM)");
-        DateTime date = DateTime.parse(stdin.readLineSync()!);
+        Expense dummyExpense = Expense(0, "", "", DateTime.parse("2023-01-01"));
+        DateTime date = dummyExpense.inputDate();
         showTotalExpenseInMonth(expenses, date);
+        print('press enter to continue');
+        stdin.readLineSync();
         break;
       case "4":
         exit(0);
