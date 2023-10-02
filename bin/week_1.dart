@@ -49,7 +49,7 @@ void showExpenseHistory(List<Expense> expenses) {
   });
 }
 
-void showTotalExpenseInMonth(List<Expense> expenses, DateTime yearMonth) {
+  double showTotalExpenseInMonth(List<Expense> expenses, DateTime yearMonth) {
   double total = 0;
   expenses
       .where((element) =>
@@ -59,4 +59,5 @@ void showTotalExpenseInMonth(List<Expense> expenses, DateTime yearMonth) {
     total += element.amount;
   });
   print('total amount = \$$total');
+  return total;
 }
