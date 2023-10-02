@@ -26,15 +26,12 @@ class Expense {
   }
 
   inputDate() {
-    String dateString = stdin.readLineSync()!;
+    String dateString = '${stdin.readLineSync()!}-01';
     List<String> dateSplit = dateString.split('-');
     try {
-      if (dateSplit.length < 3) {
-        date = DateTime.parse('$dateString-01');
-      } else {
-        date = DateTime.parse(dateString);
-      }
-    } on FormatException {
+      date = DateTime(int.parse(dateSplit.elementAt(0)),
+          int.parse(dateSplit.elementAt(1)), int.parse(dateSplit.elementAt(2)));
+    } catch(e) {
       print("Please enter a valid date");
       inputDate();
     }
