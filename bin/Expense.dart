@@ -11,7 +11,7 @@ class Expense {
   @override
   String toString() {
     String date = '${this.date.year}-${this.date.month}-${this.date.day}';
-    return ("\$$amount, $category, $note, $date");
+    return ("$date, \$$amount, $category, $note");
   }
 
   Expense.add() {
