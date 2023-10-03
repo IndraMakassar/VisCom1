@@ -49,12 +49,12 @@ void showExpenseHistory(List<Expense> expenses) {
   });
 }
 
-  double showTotalExpenseInMonth(List<Expense> expenses, DateTime yearMonth) {
+double showTotalExpenseInMonth(List<Expense> expenses, DateTime yearMonth) {
   double total = 0;
   expenses
       .where((element) =>
-          element.date.year + element.date.month ==
-          yearMonth.year + yearMonth.month)
+          element.date.year == yearMonth.year &&
+          element.date.month == yearMonth.month)
       .forEach((element) {
     total += element.amount;
   });
